@@ -114,11 +114,7 @@ def telegram_bot(token):
                 soup = BeautifulSoup(src, "lxml")
                 link = soup.find("a", class_='img')
                 imgs = soup.find("div", class_='row block_content').find_all('img')
-                for item in imgs:
-                    img = item.get('src')
-                    title=item.get('title')
-                    print(img)
-                    bot.send_photo(message.chat.id, img, caption=title)
+                for item            bot.send_photo(message.chat.id, img, caption=title)
 
 
                 bot.send_document(message.chat.id, f)
